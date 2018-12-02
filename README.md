@@ -6,6 +6,9 @@
 
 # Mistakes
 
-1. Remember THAT before adding production code you MUST create a unit test for each class you are creating. For example: while developing the class Account using AccountTest, you needed to create the class StatementPrinter. But you kept using AccountTest instead of adding StatementPrinterTest, so in AccountTest you mocked some interals specific of StatementPrinters.
-2. You haven't created unit tests for Clock and Console, you just mocked them using AccounTest and StatementPrinterTest... You should have created ClockTest as you started thinking about a LocalDate for testing purposes.
-3. And about Console, when you should have created the ConsoleTest since you are always using the mock?
+Remember THAT before adding production code you MUST create a unit test for each class you are creating. 
+
+1. Writing the class Account through AccountTest, you needed to create the class StatementPrinter. But you kept using AccountTest instead of adding StatementPrinterTest, so in AccountTest you mocked some interals specific of StatementPrinters.
+2. You made exactly the same mistake described by Sandro in the video: you created the tests in AccountTest that are copies of the Acceptance tests (using the console). 
+3. AccountTest should have just checked that calling deposit and witdraw should have stored a transaction using transactionRepository (as a mock).
+4. You haven't created unit tests for Clock and Console, you just mocked them using AccounTest and StatementPrinterTest... You should have created ClockTest and ConsoleTest but since you are mocking them everywhere, you simply forgot... The acceptance test didn't raise any error (since they are mocked). 
