@@ -12,3 +12,4 @@ Remember THAT before adding production code you MUST create a unit test for each
 2. You made exactly the same mistake described by Sandro in the video: you created the tests in AccountTest that are copies of the Acceptance tests (using the console). 
 3. AccountTest should have just checked that calling deposit and witdraw store a transaction using transactionRepository (as a mock).
 4. You haven't created unit tests for Clock and Console, you just mocked them using AccounTest and StatementPrinterTest... You should have created ClockTest and ConsoleTest but since you are mocking them everywhere, you simply forgot it... The acceptance test didn't raise any error (since they are mocked). 
+5. Problems using the functional api for streams.
